@@ -20,6 +20,7 @@ class Speechtotext {
     if (isAvailable) {
       _speech.listen(
         onResult: (result) => onResult(result.recognizedWords),
+        listenFor: const Duration(seconds: 10),
       );
     }
 

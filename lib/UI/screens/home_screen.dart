@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
     return BlocListener(
       listener: (context, state) {
         if (state is ResultState && state.words != null) {
-          print(_textTest);
           Navigator.push(
               context,
               MaterialPageRoute(
@@ -66,11 +65,9 @@ class HomeScreen extends StatelessWidget {
               Speechtotext.startRecording(onResult: (_textTest) {
                 _textTest = _textTest;
                 cubit.hint.text = _textTest;
-
                 cubit.getWordSearched();
               }, onListening: (_isListening) {
                 _isListening = _isListening;
-                isListening = _isListening;
               });
             },
             tooltip: 'Listen',
